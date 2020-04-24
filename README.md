@@ -90,7 +90,7 @@ cp WLLOd /usr/bin
 ```
 WLLOd
 ```
-It will return an error, telling you to set up config file in a directory. Now we’ll set up the config file. Note that this is case sensitive.
+###It will return an error, telling you to set up config file in a directory. Now we’ll set up the config file. Note that this is case sensitive.
 ```
 nano ~/.WLLO/WillowCoin-v2.conf
 ```
