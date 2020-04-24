@@ -31,28 +31,23 @@ General Specs
 BUILD LINUX DEAMON
 -----------
 ### Compiling WillowCoin daemon on Ubunutu 16.04 LTS 
-###Note: guide should be compatible with other Ubuntu versions from 14.04+
+Note: guide should be compatible with other Ubuntu versions from 14.04+
 
 ###Set up a swapfile if your system has less than 1.5GB of memory:
 ```
 fallocate -l 2G /swapfile
-```
-```
+
 chown root:root /swapfile
-```
-```
+
 chmod 0600 /swapfile
-```
-```
+
 sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"
-```
-```
+
 mkswap /swapfile
-```
-```
+
 swapon /swapfile
 ```
-###If fallocate doesn’t work, you can use dd if=/dev/zero of=/swapfile bs=1024 count=1024288 instead.
+If fallocate doesn’t work, you can use dd if=/dev/zero of=/swapfile bs=1024 count=1024288 instead.
 
 ###Initialize swapfile automatically on boot
 ```
@@ -72,40 +67,35 @@ git clone https://github.com/willow-coin/WillowCoin-v2
 ###now you compile the leveldb:
 ```
 cd WillowCoin-v2/src/leveldb
-```
-```
+
 chmod +x build_detect_platform
-```
-```
+
 make clean
-```
-```
+
 make libleveldb.a libmemenv.a
 ```
-#Return to source directory, and compile the daemon:
+###Return to source directory, and compile the daemon:
 ```
 cd ..
-```
-```
+
 make -f makefile.unix
 ```
 ###Strip the file to make it smaller, then relocate it:
 ```
-strip WillowCoin-v2
-```
-```
-cp WillowCoin-v2d /usr/bin
+strip WLLOd
+
+cp WLLOd /usr/bin
 ```
 ###Now run the daemon:
 ```
-WillowCoin-v2d
+WLLOd
 ```
-###It will return an error, telling you to set up config file in a directory. Now we’ll set up the config file. Note that this is case sensitive.
+It will return an error, telling you to set up config file in a directory. Now we’ll set up the config file. Note that this is case sensitive.
 ```
-nano ~/.WillowCoin-v2/WillowCoin-v2.conf
+nano ~/.WLLO/WillowCoin-v2.conf
 ```
 ###Add the following, save and exit:
-
+```
 daemon=1
 
 server=1
@@ -113,5 +103,5 @@ server=1
 rpcuser=(username)
 
 rpcpassword=(strong password)
-
-###Run WillowCoin-v2d once more and if you did everything correctly, your daemon is now online! Type WillowCoin-v2d help for a full list of commands available.
+```
+Run WLLOd once more and if you did everything correctly, your daemon is now online! Type WLLOd help for a full list of commands available.
