@@ -88,7 +88,7 @@ cp WLLOd /usr/bin
 ```
 ###Now run the daemon:
 ```
-WLLOd
+./WLLOd
 ```
 ###It will return an error, telling you to set up config file in a directory. Now we’ll set up the config file. Note that this is case sensitive.
 ```
@@ -104,4 +104,4 @@ rpcuser=(username)
 
 rpcpassword=(strong password)
 ```
-Run WLLOd once more and if you did everything correctly, your daemon is now online! Type WLLOd help for a full list of commands available.
+Run ./WLLOd once more and if you did everything correctly, your daemon is now online! Type ./WLLOd help for a full list of commands available.
